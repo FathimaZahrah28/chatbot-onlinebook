@@ -421,5 +421,10 @@ graph_with_order_tools = graph_builder.compile()
 
 config = {"recursion_limit": 100}
 
-# Uncomment this line to execute the graph:
-state = graph_with_order_tools.invoke({"messages": []}, config)
+# === Fungsi utama yang bisa dipanggil dari luar ===
+def chatbot_response(user_input: str) -> str:
+    try:
+        result = graph_with_order_tools.invoke({"input": user_input})
+        return result["output"]
+    except Exception as e:
+        return f"Error: {str(e)}"
