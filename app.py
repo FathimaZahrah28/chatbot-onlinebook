@@ -32,3 +32,4 @@ if prompt := st.chat_input("Ketik pertanyaanmu tentang buku..."):
     # tampilkan pesan bot
     with st.chat_message("assistant"):
         st.markdown(response)
+        
